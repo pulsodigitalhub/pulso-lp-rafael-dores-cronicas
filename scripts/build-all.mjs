@@ -9,6 +9,7 @@ const rootDir = path.resolve(__dirname, "..");
 
 const regionDirs = [
   "regioes/coluna",
+  "regioes/convenio",
   "regioes/joelho",
   "regioes/mao-punho",
   "regioes/ombro",
