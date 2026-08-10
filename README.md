@@ -4,15 +4,17 @@ Landing page do Dr. Rafael Rocha (ortopedista/medicina da dor, Lanner Especialid
 
 Migrado para **Vite + React** em [DES-419](https://paperclip.icebergcompany.com.br/DES/issues/DES-419) para compatibilidade com Hostinger.
 
-## Preview
+## Produção
 
-- GitHub Pages: https://oguidomingos.github.io/pulso-lp-rafael-dores-cronicas/
+- Site: https://drrafaelrochaortopedia.com.br/ (Vercel, time Pulso)
+- Repositório em produção: `github.com/pulsodigitalhub/pulso-lp-rafael-dores-cronicas` (mirror do repo original `oguidomingos/pulso-lp-rafael-dores-cronicas`, migrado em 2026-08-06)
+- Deploy automático: cada commit na branch de produção dispara build e publicação direto pela Vercel, sem passo manual
 
 ## Stack
 
 - **Framework:** React 18 + Vite 5
 - **Estilos:** Tailwind CSS (via CDN inline) + CSS custom
-- **Build:** `vite build` → `dist/` com `base: "./"` (paths relativos para Hostinger)
+- **Build:** `vite build` → `dist/` com `base: "./"` (paths relativos, herdado do processo antigo de upload manual — segue funcionando normalmente na Vercel)
 
 ## Desenvolvimento local
 
@@ -21,36 +23,11 @@ npm install
 npm run dev
 ```
 
-## Build para produção
+## Deploy
 
-```bash
-npm run build
-# Gera dist/ pronto para upload no Hostinger
-```
+O deploy é automático: cada commit na branch de produção do repo `pulsodigitalhub/pulso-lp-rafael-dores-cronicas` dispara build e publicação na Vercel. Não é preciso rodar build nem subir arquivo manualmente.
 
-## Deploy — GitHub Pages (preview)
-
-```bash
-# Build local
-npm run build
-
-# Enviar dist/ para branch gh-pages
-git checkout gh-pages || git checkout -b gh-pages
-cp -r dist/. .
-git add -A
-git commit -m "deploy: update"
-git push origin gh-pages
-git checkout main
-```
-
-> **Automação CI:** Para ativar deploy automático via GitHub Actions, o token precisa ter escopo `workflow`.
-> Adicionar `.github/workflows/deploy.yml` quando o token for atualizado com esse escopo.
-
-## Deploy — Hostinger
-
-1. Rode `npm run build` localmente
-2. Faça upload do conteúdo da pasta `dist/` via FTP/Gerenciador de Arquivos do Hostinger
-3. Aponte o domínio para a pasta raiz onde os arquivos foram enviados
+> Histórico: o projeto já foi hospedado via upload manual de `dist/` no Hostinger e via GitHub Pages (branch de deploy estático). Nenhum dos dois é mais usado — o domínio aponta pra Vercel desde 2026-08-06.
 
 ## Estrutura do projeto
 
