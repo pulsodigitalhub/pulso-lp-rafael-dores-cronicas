@@ -531,7 +531,7 @@ function LeadForm({ className = '' }) {
     // Captura do lead no submit: lê os parâmetros coletados pelo GTM (window.getTracking)
     // e envia ao webhook. keepalive garante que o POST sobreviva ao redirect abaixo.
     const tracking = typeof window.getTracking === 'function' ? window.getTracking() : {}
-    fetch('https://api.icebergcompany.com.br/lead-webhook/dr-rafael', {
+    fetch('https://leads-clientes.sergioshouse.com.br/rafael', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       keepalive: true,
