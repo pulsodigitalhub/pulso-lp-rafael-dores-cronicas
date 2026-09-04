@@ -41,6 +41,7 @@ jobs:
       - name: Gerar sitemap.xml
         env:
           SITEMAP_BASE_URL: "https://www.drrafaelrochaortopedia.com.br"
+          SITEMAP_EXCLUDE: "obg-wpp"
         run: node scripts/generate-sitemap.mjs
 
       - name: Commitar sitemap.xml se mudou
