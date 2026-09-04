@@ -1095,7 +1095,7 @@ function Footer() {
             © {new Date().getFullYear()} {m.doctorName} · {m.crm} · Ortopedista e Traumatologista
           </p>
           <p className="text-xs" style={{ color: COLOR_MUTED }}>
-            Desenvolvido por <span className="font-medium">Pulso Marketing Médico</span>
+            Desenvolvido por <span className="font-medium">Pulso Marketing Médico</span> · <a href="/politica-de-privacidade/" className="underline hover:text-gray-600">Política de privacidade</a>
           </p>
         </div>
         <p className="text-xs text-center mt-4 max-w-3xl mx-auto leading-relaxed" style={{ color: COLOR_MUTED }}>
