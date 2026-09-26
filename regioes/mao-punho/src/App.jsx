@@ -408,6 +408,9 @@ function LeadForm({ className = '' }) {
           placeholder="Seu telefone"
           inputMode="tel"
           maxLength={11}
+          minLength={10}
+          pattern="[0-9]{10,11}"
+          title="DDD + telefone (10 ou 11 dígitos)"
           className="min-h-12 rounded-lg bg-white px-4 outline-none focus:ring-2"
           style={{ color: COLOR_NAVY, border: `1px solid ${COLOR_BORDER}` }}
         />
