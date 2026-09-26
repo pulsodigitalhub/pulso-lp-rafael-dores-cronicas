@@ -572,6 +572,9 @@ function LeadForm({ className = '' }) {
           placeholder="Seu telefone"
           inputMode="tel"
           maxLength={11}
+          minLength={10}
+          pattern="[0-9]{10,11}"
+          title="DDD + telefone (10 ou 11 dígitos)"
           className="min-h-12 rounded-lg border border-white/20 bg-white px-4 text-gray-900 outline-none focus:ring-2 focus:ring-green-500"
         />
       </div>
