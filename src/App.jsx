@@ -29,8 +29,17 @@ const COLOR_GREEN = '#2e9e6e'
 const COLOR_BLUE_LIGHT = '#5bb4d0'
 const COLOR_BLUE_DEEP = '#1d4e6b'
 
+// A home (/) é o site institucional: contato direto pelo WhatsApp, sem formulário.
+// /lp/ e /ig/ usam este mesmo build e seguem com o formulário dos anúncios.
+const IS_INSTITUCIONAL = typeof window !== 'undefined' && window.location.pathname === '/'
+const WA_INSTITUCIONAL = `https://wa.me/${m.whatsapp}?text=${encodeURIComponent('Olá, vim pelo site do Dr. Rafael Rocha e gostaria de agendar uma consulta.')}`
+
 function openLeadModal(event) {
   event?.preventDefault()
+  if (IS_INSTITUCIONAL) {
+    window.open(WA_INSTITUCIONAL, '_blank', 'noopener')
+    return
+  }
   window.dispatchEvent(new CustomEvent('openLeadModal'))
 }
 
