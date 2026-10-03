@@ -17,7 +17,7 @@ const regionDirs = [
   "regioes/quadril",
 ];
 
-const rootSlugs = ["ig"];
+const rootSlugs = ["ig", "lp"];
 
 function runBuild(cwd) {
   execFileSync("npx", ["vite", "build"], {
